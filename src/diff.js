@@ -20,7 +20,6 @@
 
 function diffAttr(oldAttrs,newAttrs){
     let patch = {};
-
     // 判断老的属性和新的属性的关系.
     for(let key in oldAttrs){
         if(oldAttrs[key] !== newAttrs[key]){

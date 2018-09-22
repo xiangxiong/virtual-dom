@@ -54,4 +54,4 @@ function renderDom(el,target){
     target.appendChild(el);
 }
 
-export {createElement,render,renderDom};
+export {createElement,render,renderDom,Element,setAttr};
