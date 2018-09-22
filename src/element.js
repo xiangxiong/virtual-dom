@@ -1,4 +1,4 @@
-
+// 虚拟DOM的类.
 class Element{
     constructor(type,props,children){
         this.type = type;
@@ -11,6 +11,7 @@ function createElement(type,props,children){
     return new Element(type,props,children);
 }
 
+// 设置属性.
 function setAttr(node,key,value){
     switch(key){
         case 'value':
@@ -39,6 +40,7 @@ function render(eleObj){
         setAttr(el,key,eleObj.props[key]);
     }
 
+    // 遍历子节点,如实是虚拟dom继续渲染，不是则代表是文本节点.
     eleObj.children.forEach(child=>{
         child = (child instanceof Element)?
         render(child):document.createTextNode(child);

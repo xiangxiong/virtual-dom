@@ -1,16 +1,24 @@
 import {createElement,render,renderDom} from './element';
-
-let virtualDom = createElement('ul',{class:'list'},[
+import diff from './diff'
+let virtualDom1 = createElement('ul',{class:'list'},[
     createElement('li',{class:'item'},['a']),
     createElement('li',{class:'item'},['b']),
     createElement('li',{class:'item'},['c'])
 ]);
 
+let virtualDom2 = createElement('ul',{class:'list'},[
+    createElement('li',{class:'item'},['1']),
+    createElement('li',{class:'item'},['b']),
+    createElement('div',{class:'item'},['3'])
+]);
 
-let el = render(virtualDom);
+let patchs = diff(virtualDom1,virtualDom2);
+console.log(patchs);
 
-console.log(el);
+// let el = render(virtualDom);
+// console.log(el);
+// renderDom(el,window.root)
+// console.log(virtualDom);
 
-renderDom(el,window.root)
 
-console.log(virtualDom);
+
