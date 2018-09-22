@@ -1,4 +1,4 @@
-#1、virtual dom
+## 1、virtual dom
 定义: vitual dom, 也就是虚拟节点. 它通过JS的Object对象模拟的Dom节点,然后再通过特定的render方法将其渲染成真实的Dom节点.
 
 ## 1.1 实现的思路
